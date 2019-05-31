@@ -46,6 +46,8 @@ namespace PizzaProject1
             // the instance will be passed to you
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<IAddressRepository, AddressRepository>();
+            services.AddScoped<IRestaurantRepository, RestaurantRepository>();
+            services.AddScoped<IPizzaRepository, PizzaRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,7 +72,7 @@ namespace PizzaProject1
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Customer}/{action=Create}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

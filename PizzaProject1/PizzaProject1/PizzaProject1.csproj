@@ -18,9 +18,4 @@
     <ProjectReference Include="..\PizzaProject1.Library\PizzaProject1.Context.csproj" />
   </ItemGroup>
 
-
-  <ItemGroup>
-    <Folder Include="Views\Restaurant\" />
-  </ItemGroup>
-
 </Project>

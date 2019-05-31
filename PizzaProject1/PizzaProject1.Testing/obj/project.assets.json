@@ -9429,11 +9429,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Michael Lee\\Desktop\\Revature\\Lee_Michael_Project01\\PizzaProject1\\PizzaProject1.Testing\\PizzaProject1.Testing.csproj",
+      "projectUniqueName": "C:\\Users\\Michael Lee\\Desktop\\Lee_Michael_Project01\\PizzaProject1\\PizzaProject1.Testing\\PizzaProject1.Testing.csproj",
       "projectName": "PizzaProject1.Testing",
-      "projectPath": "C:\\Users\\Michael Lee\\Desktop\\Revature\\Lee_Michael_Project01\\PizzaProject1\\PizzaProject1.Testing\\PizzaProject1.Testing.csproj",
+      "projectPath": "C:\\Users\\Michael Lee\\Desktop\\Lee_Michael_Project01\\PizzaProject1\\PizzaProject1.Testing\\PizzaProject1.Testing.csproj",
       "packagesPath": "C:\\Users\\Michael Lee\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Michael Lee\\Desktop\\Revature\\Lee_Michael_Project01\\PizzaProject1\\PizzaProject1.Testing\\obj\\",
+      "outputPath": "C:\\Users\\Michael Lee\\Desktop\\Lee_Michael_Project01\\PizzaProject1\\PizzaProject1.Testing\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -9452,14 +9452,14 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\Michael Lee\\Desktop\\Revature\\Lee_Michael_Project01\\PizzaProject1\\PizzaProject1.Context\\PizzaProject1.Library.csproj": {
-              "projectPath": "C:\\Users\\Michael Lee\\Desktop\\Revature\\Lee_Michael_Project01\\PizzaProject1\\PizzaProject1.Context\\PizzaProject1.Library.csproj"
+            "C:\\Users\\Michael Lee\\Desktop\\Lee_Michael_Project01\\PizzaProject1\\PizzaProject1.Context\\PizzaProject1.Library.csproj": {
+              "projectPath": "C:\\Users\\Michael Lee\\Desktop\\Lee_Michael_Project01\\PizzaProject1\\PizzaProject1.Context\\PizzaProject1.Library.csproj"
             },
-            "C:\\Users\\Michael Lee\\Desktop\\Revature\\Lee_Michael_Project01\\PizzaProject1\\PizzaProject1.Library\\PizzaProject1.Context.csproj": {
-              "projectPath": "C:\\Users\\Michael Lee\\Desktop\\Revature\\Lee_Michael_Project01\\PizzaProject1\\PizzaProject1.Library\\PizzaProject1.Context.csproj"
+            "C:\\Users\\Michael Lee\\Desktop\\Lee_Michael_Project01\\PizzaProject1\\PizzaProject1.Library\\PizzaProject1.Context.csproj": {
+              "projectPath": "C:\\Users\\Michael Lee\\Desktop\\Lee_Michael_Project01\\PizzaProject1\\PizzaProject1.Library\\PizzaProject1.Context.csproj"
             },
-            "C:\\Users\\Michael Lee\\Desktop\\Revature\\Lee_Michael_Project01\\PizzaProject1\\PizzaProject1\\PizzaProject1.csproj": {
-              "projectPath": "C:\\Users\\Michael Lee\\Desktop\\Revature\\Lee_Michael_Project01\\PizzaProject1\\PizzaProject1\\PizzaProject1.csproj"
+            "C:\\Users\\Michael Lee\\Desktop\\Lee_Michael_Project01\\PizzaProject1\\PizzaProject1\\PizzaProject1.csproj": {
+              "projectPath": "C:\\Users\\Michael Lee\\Desktop\\Lee_Michael_Project01\\PizzaProject1\\PizzaProject1\\PizzaProject1.csproj"
             }
           }
         }

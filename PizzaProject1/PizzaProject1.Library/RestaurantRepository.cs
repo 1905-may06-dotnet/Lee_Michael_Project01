@@ -35,8 +35,8 @@ namespace PizzaProject1.Context
 
         public Library.Restaurant GetRestaurantByRestaurantId(int id)
         {
-            var Restaurant = _db.Restaurant.Where(x => x.RestaurantId == id).FirstOrDefault();
-            return RestaurantMapper.Map(Restaurant);
+            var restaurant = _db.Restaurant.Where(x => x.RestaurantId == id).FirstOrDefault();
+            return RestaurantMapper.Map(restaurant);
         }
 
         public IEnumerable<Library.Restaurant> GetRestaurant()
