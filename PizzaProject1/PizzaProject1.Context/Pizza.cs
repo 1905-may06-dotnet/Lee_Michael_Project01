@@ -15,7 +15,7 @@ namespace PizzaProject1.Library
         public int? OrderId { get; set; }
         public string Size { get { return size; } set { size = value; } }
         public string Crust { get {return crust; } set { crust = value; } }
-        public decimal cost { get { return pizzaTotal; } set { pizzaTotal = value; } }
+        public decimal Cost { get { return pizzaTotal; } set { pizzaTotal = value; } }
         public int PizzaAmount { get { return amt; } set { value = amt; } }
         public List<string> PizzaTopping { get; set; }
 

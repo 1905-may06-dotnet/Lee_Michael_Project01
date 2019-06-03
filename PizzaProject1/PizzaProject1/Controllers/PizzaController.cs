@@ -80,7 +80,7 @@ namespace PizzaProject1.Controllers
             p.PizzaToppings = pizza.PizzaTopping;
             p.Size = pizza.Size;
             p.Crust = pizza.Crust;
-            p.cost = pizza.Cost;
+            p.Cost = pizza.Cost;
 
             return View(p);
         }
@@ -128,9 +128,9 @@ namespace PizzaProject1.Controllers
             HttpContext.Session.SetInt32("PizzaId", pizza.PizzaId);
             dmc.Size = pizza.Size;
             dmc.Crust = pizza.Crust;
-            dmc.PizzaAmount = pizza.PizzaAmount;
+            dmc.PizzaAmount = 2; //pizza.PizzaAmount;
             dmc.OrderId = pizza.OrderId;
-            dmc.cost = pizza.PizzaCost();
+            dmc.Cost = pizza.PizzaCost();
 
             try
             {

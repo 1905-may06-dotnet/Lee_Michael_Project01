@@ -15,7 +15,7 @@ namespace PizzaProject1.Context.Data
         public int Size { get; set; }
         public int Crust { get; set; }
         public int PizzaAmount { get; set; }
-        public decimal cost { get; set; }
+        public decimal Cost { get; set; }
 
         public virtual Orders Order { get; set; }
         public virtual ICollection<PizzaTopping> PizzaTopping { get; set; }

@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaProject1", "PizzaProject1\PizzaProject1.csproj", "{15FC9824-72FD-4231-84C3-D9D8E75BBE88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaProject1", "PizzaProject1\PizzaProject1.csproj", "{15FC9824-72FD-4231-84C3-D9D8E75BBE88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaProject1.Library", "PizzaProject1.Context\PizzaProject1.Library.csproj", "{3FAC7365-5045-4ADB-8BD3-84A3807880C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaProject1.Library", "PizzaProject1.Context\PizzaProject1.Library.csproj", "{3FAC7365-5045-4ADB-8BD3-84A3807880C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaProject1.Context", "PizzaProject1.Library\PizzaProject1.Context.csproj", "{5E096A45-76B8-4E5F-B00A-1B882669A9A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaProject1.Context", "PizzaProject1.Library\PizzaProject1.Context.csproj", "{5E096A45-76B8-4E5F-B00A-1B882669A9A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaProject1.Testing", "PizzaProject1.Testing\PizzaProject1.Testing.csproj", "{21B1E093-EE72-4819-828B-D941A476918B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaProject1.Testing", "PizzaProject1.Testing\PizzaProject1.Testing.csproj", "{21B1E093-EE72-4819-828B-D941A476918B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "TestConsole\TestConsole.csproj", "{42257A9B-FE1E-42A8-AF2F-134EB00F43D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{21B1E093-EE72-4819-828B-D941A476918B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21B1E093-EE72-4819-828B-D941A476918B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21B1E093-EE72-4819-828B-D941A476918B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42257A9B-FE1E-42A8-AF2F-134EB00F43D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42257A9B-FE1E-42A8-AF2F-134EB00F43D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42257A9B-FE1E-42A8-AF2F-134EB00F43D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42257A9B-FE1E-42A8-AF2F-134EB00F43D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
