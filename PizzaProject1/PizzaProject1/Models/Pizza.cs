@@ -7,18 +7,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PizzaProject1.Models
 {
-    public class Topping
-    {
-        [DisplayName("#")]
-        public int Num { get; set; } = 0;
-
-        [DisplayName("Topping Name")]
-        public string ToppingName { get; set; }
-
-        [DisplayName("Amount of topping")]
-        public int? Count { get; set; }
-    }
-
     public class Pizza
     {
 
@@ -71,6 +59,16 @@ namespace PizzaProject1.Models
 
             return pizzaTotal * PizzaAmount;
         }
+
+        //public bool TotalCost()
+        //{
+        //    if (Cost > 2000 || PizzaAmount > 100)
+        //    {
+        //        return false;
+        //    }
+        //    return true;
+         
+        //}
 
     }
 }

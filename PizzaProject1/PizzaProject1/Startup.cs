@@ -52,6 +52,7 @@ namespace PizzaProject1
             services.AddScoped<IRestaurantRepository, RestaurantRepository>();
             services.AddScoped<IPizzaRepository, PizzaRepository>();
             services.AddScoped<IOrdersRepository, OrdersRepository>();
+            services.AddScoped<IToppingRepository, ToppingRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

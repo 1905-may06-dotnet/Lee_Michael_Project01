@@ -1,0 +1,47 @@
+﻿@model IEnumerable<PizzaProject1.Models.Topping>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Num)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.ToppingName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Count)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.ToppingId)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Num)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.ToppingName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Count)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.ToppingId)
+            </td>*@
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

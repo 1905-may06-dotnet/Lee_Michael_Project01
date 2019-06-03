@@ -12,25 +12,15 @@ namespace PizzaProject1.Controllers
     {
 
         private readonly IPizzaRepository db;
-        //private readonly IToppingRepository db1;
 
         public PizzaController(IPizzaRepository db)
         {
             this.db = db;
         }
 
-        //public PizzaController(IToppingRepository db1)
-        //{
-        //    this.db1 = db1;
-        //}
-
         Models.Pizza p;
-        //Models.Topping t;
 
         List<Models.Pizza> pizzaList = new List<Models.Pizza>();
-        //List<Models.Topping> toppingList = new List<Models.Topping>();
-
-
 
         // GET: Pizza
         public ActionResult PizzaIndex()
@@ -54,22 +44,6 @@ namespace PizzaProject1.Controllers
             return View(pizzaList);
         }
 
-        //// GET: Toppings
-        //public ActionResult ToppingIndex()
-        //{
-        //    var toppings = db1.GetTopping();
-        //    foreach (var topping in toppings)
-        //    {
-        //        t = new Models.Topping();
-        //        t.ToppingName = topping.ToppingName;
-        //        t.Count = topping.Count;
-             
-        //        toppingList.Add(t);
-        //    }
-
-        //    return View(toppingList);
-        //}
-
         // GET: Pizza/Details/5
         public ActionResult PizzaDetails(int id)
         {
@@ -84,19 +58,6 @@ namespace PizzaProject1.Controllers
 
             return View(p);
         }
-
-        //// GET: Topping/Details/5
-        //public ActionResult ToppingDetails(int id)
-        //{
-        //    var topping = db1.GetToppingByToppingId(id);
-        //    t = new Models.Topping();
-        //    t.ToppingName = topping.ToppingName;
-        //    t.Count = topping.Count;
-
-        //    toppingList.Add(t);
-
-        //    return View(t);
-        //}
 
         // GET: Pizza/Create
         public ActionResult Create()
@@ -140,7 +101,7 @@ namespace PizzaProject1.Controllers
                 ViewBag.PizzaID = PizzaID;
                 db.AddPizza(dmc);
                 db.Save();
-                return RedirectToAction("Create", "Topping");
+                return RedirectToAction("Index", "Topping");
             }
             catch
             {
