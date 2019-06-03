@@ -3,18 +3,22 @@
 @*<p>
     <a asp-action="Create">Create New</a>
 </p>*@
+<h1>Hello @ViewBag.CustID</h1>
 <table class="table">
     <thead>
         <tr>
             @*<th>
-                @Html.DisplayNameFor(model => model.Num) 
-                @Num++
-            </th>*@
+            @Html.DisplayNameFor(model => model.Num)
+            @Num++
+        </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.RestaurantName)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.AddressId)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.RestaurantId)
             </th>
             <th></th>
         </tr>
@@ -23,16 +27,19 @@
 @foreach (var item in Model) {
         <tr>
             @*<td>
-                @Html.DisplayFor(modelItem => item.Num)
-            </td>*@
+            @Html.DisplayFor(modelItem => item.Num)
+        </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.RestaurantName)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.AddressId)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.RestaurantId)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Create Order", "CreateOrder", new { id = item.RestaurantId }) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>

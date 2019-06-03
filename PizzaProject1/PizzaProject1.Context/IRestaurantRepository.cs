@@ -9,6 +9,7 @@ namespace PizzaProject1.Library
         void AddRestaurant(Restaurant restaurant);
         void EditRestaurant(Restaurant restaurant);
         void DeleteRestaurant(int restaurantId);
+        //void GetRestaurantAddressById();
         IEnumerable<Restaurant> GetRestaurant();
         Restaurant GetRestaurantByRestaurantId(int id);
         void Save();

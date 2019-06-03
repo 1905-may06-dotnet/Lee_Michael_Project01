@@ -11,8 +11,8 @@ namespace PizzaProject1.Context.Data
         }
 
         public int OrderId { get; set; }
-        public int RestaurantId { get; set; }
-        public int CustomerId { get; set; }
+        public int? RestaurantId { get; set; }
+        public int? CustomerId { get; set; }
         public decimal TotalCost { get; set; }
         public DateTime? OrderDate { get; set; }
 

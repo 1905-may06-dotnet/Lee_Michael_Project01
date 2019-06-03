@@ -16,5 +16,7 @@ namespace PizzaProject1.Models
         public string RestaurantName { get; set; }
         [DisplayName("Address")]
         public int AddressId { get; set; }
+        [DisplayName("Restraunt ID")]
+        public int RestaurantId { get; set; }
     }
 }

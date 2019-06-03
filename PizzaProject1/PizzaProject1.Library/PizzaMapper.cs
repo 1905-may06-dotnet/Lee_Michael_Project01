@@ -11,9 +11,9 @@ namespace PizzaProject1.Context
             PizzaProject1.Context.Data.Pizza dePizza = new PizzaProject1.Context.Data.Pizza();
             //dePizza.PizzaId = dmPizza.PizzaId;
             dePizza.OrderId = dmPizza.OrderId;
-            dePizza.Size = dmPizza.Size;
-            dePizza.Crust = dmPizza.Crust;
-            dePizza.ToppingAmount = dmPizza.ToppingAmount;
+            dePizza.Size = Convert.ToInt32(dmPizza.Size);
+            dePizza.Crust = Convert.ToInt32(dmPizza.Crust);
+            dePizza.PizzaAmount = dmPizza.PizzaAmount;
             dePizza.Cost = dmPizza.Cost;
 
 
@@ -23,9 +23,9 @@ namespace PizzaProject1.Context
         {
             PizzaId = dePizza.PizzaId,
             OrderId = dePizza.OrderId,
-            Size = dePizza.Size,
-            Crust = dePizza.Crust,
-            ToppingAmount = dePizza.ToppingAmount,
+            Size = Convert.ToString(dePizza.Size),
+            Crust = Convert.ToString(dePizza.Crust),
+            PizzaAmount = dePizza.PizzaAmount,
             Cost = dePizza.Cost,
 
 

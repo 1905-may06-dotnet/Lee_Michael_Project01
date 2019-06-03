@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PizzaProject1.Library;
 
+
 namespace PizzaProject1.Controllers
 {
     public class CustomerController : Controller
@@ -25,11 +26,14 @@ namespace PizzaProject1.Controllers
         // GET: Customer
         public ActionResult Index()
         {
+            //ViewBag.ID = Convert.ToInt32(TempData["CustomerId"]);
+            //TempData.Keep();
             var customers = db.GetCustomer();
             foreach (var customer in customers)
             {
                 c = new Models.Customer();
                 c.Name = customer.GetName(customer.FirstName, customer.LastName);
+                c.CustomerId = customer.CustomerId;
                 c.Username = customer.Username;
                 c.Password = customer.Password;
                 customerList.Add(c);
@@ -52,6 +56,7 @@ namespace PizzaProject1.Controllers
             var customer = db.GetCustomerByCustomerId(id);
             c = new Models.Customer();
             c.Name = customer.GetName(customer.FirstName, customer.LastName);
+            c.CustomerId = customer.CustomerId;
             c.Username = customer.Username;
             c.Password = customer.Password;
 
@@ -80,7 +85,7 @@ namespace PizzaProject1.Controllers
                 // TODO: Add insert logic here
                 db.AddCustomer(dmc);
                 db.Save();
-                return RedirectToAction("Index");
+                return RedirectToAction("Login");
             }
             catch (Exception e)
             {
@@ -90,13 +95,19 @@ namespace PizzaProject1.Controllers
         }
         public ActionResult Login()
         {
-            return View();
+            //ViewBag.ID = Convert.ToInt32(TempData["CustomerId"]);
+            //TempData["CustomerId"] = ViewBag.ID;
+            //TempData.Keep();
+
+            return View();            
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(IFormCollection collection, Models.Customer customer)
         {
+            //int b = Convert.ToInt32(TempData["a"]);
+            //int cd= b;
             PizzaProject1.Library.Customer dmc = new Customer();
             var cust = db.GetCustomer();
             c = new Models.Customer();
@@ -109,11 +120,27 @@ namespace PizzaProject1.Controllers
                     if(x.Password == customer.Password)
                     {
                         var user = db.GetCustomerByUsername(x.Username);
-                        
+
+                        c.CustomerId = x.CustomerId;
+              
                         c.Username = x.Username;
                         c.Password = x.Password;
 
-                        return RedirectToAction("Index", "Address");
+                        //ViewBag.ID = Convert.ToInt32(TempData["CustomerId"]);
+                        HttpContext.Session.SetInt32("CustomerId", x.CustomerId);
+                        //TempData["CustomerID"] = x.CustomerId;
+                        //TempData["Username"] = x.Username;
+                        //TempData.Keep();
+
+                        //TempData["C"] = 1;
+                        //int ID = Convert.ToInt32(TempData["C"]);
+                        //TempData["C"] = ID;
+
+                        //HttpContext.Session.SetInt32("CustomerId", x.CustomerId);
+                        //HttpContext.Session.SetString("Username", x.Username);
+
+
+                        return RedirectToAction("Index", "Restaurant");
 
                     }
                     else
@@ -122,11 +149,6 @@ namespace PizzaProject1.Controllers
                         return View();
                     }
 
-                }
-                else
-                {
-                    ViewData["Text"] = "Username does not exist.";
-                    return View();
                 }
 
             }

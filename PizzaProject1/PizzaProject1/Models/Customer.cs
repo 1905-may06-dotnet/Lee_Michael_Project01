@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PizzaProject1.Models
 {
+    [Serializable]
     public class Customer
     {
 
@@ -28,6 +29,8 @@ namespace PizzaProject1.Models
         [DisplayName("Last Name")]
         [Required(ErrorMessage = "Last name required")]
         public string LastName { get; set; }
+
+        public int CustomerId { get; set; }
 
         //public int AddressId { get; set; }
         //public int RestaurantId { get; set; }

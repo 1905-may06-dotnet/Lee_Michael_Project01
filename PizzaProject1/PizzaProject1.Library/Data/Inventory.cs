@@ -6,8 +6,8 @@ namespace PizzaProject1.Context.Data
     public partial class Inventory
     {
         public int InventoryId { get; set; }
-        public int RestaurantId { get; set; }
-        public int ToppingId { get; set; }
+        public int? RestaurantId { get; set; }
+        public int? ToppingId { get; set; }
         public int? ItemStock { get; set; }
 
         public virtual Restaurant Restaurant { get; set; }

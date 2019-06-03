@@ -25,6 +25,8 @@ namespace PizzaProject1.Controllers
         // GET: Address
         public ActionResult Index()
         {
+            //ViewBag.ID = Convert.ToInt32(TempData["CustomerId"]);
+            //ViewBag.ID = Convert.ToInt32(TempData["Username"]);
             var addresses = db.GetAddress();
             foreach (var address in addresses)
             {
@@ -62,12 +64,15 @@ namespace PizzaProject1.Controllers
 
         public ActionResult Log()
         {
+
             return RedirectToAction("Login", "Customer");
         }
 
         // GET: Address/Create
         public ActionResult Create()
         {
+            //ViewBag.ID = Convert.ToInt32(TempData["CustomerId"]);
+            //TempData["CustomerId"] = ViewBag.ID;
             return View();
         }
 
@@ -76,7 +81,7 @@ namespace PizzaProject1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection, Models.Address address)
         {
-
+            //ViewBag.ID = Convert.ToInt32(TempData["CustomerId"]);
             PizzaProject1.Library.Address dmc = new Address();
             dmc.StreetOne = address.StreetOne;
             dmc.StreetTwo = address.StreetTwo;

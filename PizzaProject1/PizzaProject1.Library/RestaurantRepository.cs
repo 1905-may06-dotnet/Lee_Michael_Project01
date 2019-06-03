@@ -33,6 +33,16 @@ namespace PizzaProject1.Context
                 _db.Restaurant.Update(RestaurantMapper.Map(restaurant));
         }
 
+        //public IEnumerable<Library.Restaurant> GetRestaurantAddressByID(Library.Restaurant restaurant)
+        //{
+        //    if (_db.Restaurant.Find(restaurant.AddressId) != null)
+        //    {
+        //        return _db.Address.Where(Address.AddressId == )
+        //    }
+
+
+        //}
+
         public Library.Restaurant GetRestaurantByRestaurantId(int id)
         {
             var restaurant = _db.Restaurant.Where(x => x.RestaurantId == id).FirstOrDefault();

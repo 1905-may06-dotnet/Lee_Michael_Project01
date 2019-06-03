@@ -1,0 +1,66 @@
+﻿@model PizzaProject1.Models.Pizza
+
+<h4>Pizza</h4>
+<h1> hello @ViewBag.CustID</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+            <label asp-for="Num" class="control-label"></label>
+            <input asp-for="Num" class="form-control" />
+            <span asp-validation-for="Num" class="text-danger"></span>
+        </div>*@
+            <div class="form-group">
+                @Html.DropDownList("Size", new List<SelectListItem> {
+               new SelectListItem { Text = "Small", Value = "1", Selected = false},
+               new SelectListItem { Text = "Medium", Value = "2", Selected = true},
+               new SelectListItem { Text = "Large", Value = "3", Selected = false},
+               new SelectListItem { Text = "X-Large", Value = "4", Selected = false}
+
+           })
+                @*<label asp-for="Size" class="control-label"></label>
+            <input asp-for="Size" class="form-control" />
+            <span asp-validation-for="Size" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                @Html.DropDownList("Crust Type", new List<SelectListItem> {
+             new SelectListItem { Text = "Plain", Value = "1", Selected = true},
+             new SelectListItem { Text = "Buttered", Value = "2", Selected = false},
+             new SelectListItem { Text = "Garlic", Value = "3", Selected = false},
+             new SelectListItem { Text = "Stuffed", Value = "4", Selected = false}
+           })
+                @*<label asp-for="Crust" class="control-label"></label>
+            <input asp-for="Crust" class="form-control" />
+            <span asp-validation-for="Crust" class="text-danger"></span>*@
+            </div>
+            @*<div class="form-group">
+            <label asp-for="Cost" class="control-label"></label>
+            <input asp-for="Cost" class="form-control" />
+            <span asp-validation-for="Cost" class="text-danger"></span>
+        </div>*@
+            <div class="form-group">
+                <label asp-for="PizzaAmount" class="control-label"></label>
+                <input asp-for="PizzaAmount" class="form-control" />
+                <span asp-validation-for="PizzaAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderId" class="control-label"></label>
+                <input asp-for="OrderId" class="form-control" />
+                <span asp-validation-for="OrderId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

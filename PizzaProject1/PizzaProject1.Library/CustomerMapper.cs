@@ -10,7 +10,7 @@ namespace PizzaProject1.Context
         public static PizzaProject1.Context.Data.Customer Map(PizzaProject1.Library.Customer dmCustomer)
         {
             PizzaProject1.Context.Data.Customer deCustomer = new PizzaProject1.Context.Data.Customer();
-            //deCustomer.CustomerId = dmCustomer.CustomerId;
+            deCustomer.CustomerId = dmCustomer.CustomerId;
             deCustomer.FirstName = dmCustomer.FirstName;
             deCustomer.LastName = dmCustomer.LastName;
             deCustomer.Username = dmCustomer.Username;

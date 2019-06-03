@@ -21,16 +21,25 @@ namespace PizzaProject1.Controllers
 
         List<Models.Restaurant> restaurantList = new List<Models.Restaurant>();
 
+
         // GET: Restaurant
         public ActionResult Index()
         {
+            var custID = HttpContext.Session.GetInt32("CustomerId");
+            ViewBag.CustID = custID;
+            var restID = HttpContext.Session.GetInt32("RestaurantId");
+            ViewBag.RestID = restID;
+            //ViewBag.ID = Convert.ToInt32(TempData["CustomerId"]);
             var restaurants = db.GetRestaurant();
             foreach (var restaurant in restaurants)
             {
          
                 c = new Models.Restaurant();
+                c.RestaurantId = restaurant.RestaurantId;
                 c.RestaurantName = restaurant.RestaurantName;
                 c.AddressId = restaurant.AddressId;
+                ////ViewBag.RestID = Convert.ToInt32(TempData["RestaurantId"]);
+                ////TempData["RestaurantID"] = c.RestaurantId;
                 restaurantList.Add(c);
             }
 
@@ -42,8 +51,10 @@ namespace PizzaProject1.Controllers
         {
             var restaurant = db.GetRestaurantByRestaurantId(id);
             c = new Models.Restaurant();
+            c.RestaurantId = restaurant.RestaurantId;
             c.RestaurantName = restaurant.RestaurantName;
             c.AddressId = restaurant.AddressId;
+            HttpContext.Session.SetInt32("RestaurantId", restaurant.RestaurantId);
             restaurantList.Add(c);
 
             return View(c);
@@ -52,6 +63,7 @@ namespace PizzaProject1.Controllers
         // GET: Restaurant/Create
         public ActionResult Create()
         {
+            //ViewBag.ID = Convert.ToInt32(TempData["CustomerId"]);
             return View();
         }
 
@@ -62,12 +74,16 @@ namespace PizzaProject1.Controllers
         {
 
             PizzaProject1.Library.Restaurant dmc = new Restaurant();
+            dmc.RestaurantId = restaurant.RestaurantId;
             dmc.RestaurantName = restaurant.RestaurantName;
             dmc.AddressId = restaurant.AddressId;
+            HttpContext.Session.SetInt32("RestaurantId", restaurant.RestaurantId);
 
             try
             {
                 // TODO: Add insert logic here
+                //ViewBag.ID = Convert.ToInt32(TempData["CustomerId"]);
+                //TempData.Keep();
                 db.AddRestaurant(dmc);
                 db.Save();
                 return RedirectToAction("Index");
@@ -79,27 +95,36 @@ namespace PizzaProject1.Controllers
         }
 
         // GET: Restaurant/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult CreateOrder(PizzaProject1.Library.Restaurant restaurant)
         {
-            return View();
+            //ViewBag.ID = Convert.ToInt32(TempData["CustomerId"]);
+            //TempData.Keep();
+            //ViewBag.RestID = Convert.ToInt32(TempData["RestaurantId"]);
+            //TempData.Keep();
+            HttpContext.Session.SetInt32("RestaurantId", restaurant.RestaurantId);
+            var restID = HttpContext.Session.GetInt32("RestaurantId");
+            ViewBag.RestID = restID;
+            var custID = HttpContext.Session.GetInt32("CustomerId");
+            ViewBag.CustID = custID;
+            return RedirectToAction("Create", "Orders");
         }
 
         // POST: Restaurant/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult CreatePizza(int id, IFormCollection collection)
+        //{
+        //    try
+        //    {
+        //        // TODO: Add update logic here
+        //        ViewBag.RestID = Convert.ToInt32(TempData["RestaurantId"]);
+        //        return RedirectToAction("Create", "Pizza");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
 
         // GET: Restaurant/Delete/5
         public ActionResult Delete(int id)

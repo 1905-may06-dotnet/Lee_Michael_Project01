@@ -13,7 +13,9 @@ namespace PizzaProject1.Controllers
     {
         public IActionResult Index()
         {
+            TempData["CustomerId"] = 0;
             return View();
+
         }
 
         public IActionResult Privacy()

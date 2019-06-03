@@ -122,13 +122,11 @@ namespace PizzaProject1.Context.Data
                 entity.HasOne(d => d.Restaurant)
                     .WithMany(p => p.Inventory)
                     .HasForeignKey(d => d.RestaurantId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Inventory__Resta__6383C8BA");
 
                 entity.HasOne(d => d.Topping)
                     .WithMany(p => p.Inventory)
                     .HasForeignKey(d => d.ToppingId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Inventory__Toppi__628FA481");
             });
 
@@ -150,13 +148,11 @@ namespace PizzaProject1.Context.Data
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.CustomerId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Orders__Customer__5441852A");
 
                 entity.HasOne(d => d.Restaurant)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.RestaurantId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Orders__Restaura__534D60F1");
             });
 
@@ -170,12 +166,11 @@ namespace PizzaProject1.Context.Data
 
                 entity.Property(e => e.OrderId).HasColumnName("OrderID");
 
-                entity.Property(e => e.ToppingAmount).HasDefaultValueSql("((0))");
+                entity.Property(e => e.PizzaAmount).HasDefaultValueSql("((0))");
 
                 entity.HasOne(d => d.Order)
                     .WithMany(p => p.Pizza)
                     .HasForeignKey(d => d.OrderId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Pizza__OrderID__5812160E");
             });
 
@@ -190,13 +185,11 @@ namespace PizzaProject1.Context.Data
                 entity.HasOne(d => d.Pizza)
                     .WithMany(p => p.PizzaTopping)
                     .HasForeignKey(d => d.PizzaId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__PizzaTopp__Pizza__5DCAEF64");
 
                 entity.HasOne(d => d.Topping)
                     .WithMany(p => p.PizzaTopping)
                     .HasForeignKey(d => d.ToppingId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__PizzaTopp__Toppi__5EBF139D");
             });
 

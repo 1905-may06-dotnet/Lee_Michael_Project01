@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "Login";
+    string customerId = TempData["CustomerId"] as string;
+        TempData.Keep();
 }
 @ViewBag
 
