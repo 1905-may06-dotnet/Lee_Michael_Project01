@@ -80,7 +80,7 @@ namespace PizzaProject1.Controllers
             p.PizzaToppings = pizza.PizzaTopping;
             p.Size = pizza.Size;
             p.Crust = pizza.Crust;
-            p.Cost = pizza.Cost;
+            p.cost = pizza.Cost;
 
             return View(p);
         }
@@ -130,7 +130,7 @@ namespace PizzaProject1.Controllers
             dmc.Crust = pizza.Crust;
             dmc.PizzaAmount = pizza.PizzaAmount;
             dmc.OrderId = pizza.OrderId;
-            dmc.Cost = pizza.PizzaCost();
+            dmc.cost = pizza.PizzaCost();
 
             try
             {

@@ -43,7 +43,7 @@ namespace PizzaProject1.Models
         public string Crust { get { return crust; } set { crust = value; } }
 
         [DisplayName("Cost")]
-        public decimal Cost { get { return pizzaTotal; } set { pizzaTotal = value; } }
+        public decimal cost { get { return pizzaTotal; } set { pizzaTotal = value; } }
 
         [DisplayName("PizzaAmount")]
         public int PizzaAmount { get { return amt; } set { value = amt; } }
@@ -56,15 +56,15 @@ namespace PizzaProject1.Models
         public decimal PizzaCost()
         {
 
-            pizzaTotal = 0.00m;
+            pizzaTotal = 10.00m;
 
-            if (Size == "1") pizzaTotal += 7.00M;
+            if (size == "1") pizzaTotal += 7.00M;
             else if (Size == "2") pizzaTotal += 10.00M;
             else if (Size == "3") pizzaTotal += 12.00M;
             else if (Size == "4") pizzaTotal += 15.00M;
             else { }
 
-            if (Crust == "1") pizzaTotal += 0.00m;
+            if (crust == "1") pizzaTotal += 0.00m;
             else if (Crust == "2" || Crust == "3") pizzaTotal += 0.50M;
             else if (Crust == "4") pizzaTotal += 1.50M;
             else { }
