@@ -11,9 +11,9 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  buildtoSolution: 'PizzaProject1'
-  buildtoPath: 'PizzaProject1/PizzaProject1'
-  builttoTest: 'PizzaProject1/PizzaProject1.Testing'
+  pathtoSolution: 'PizzaProject1'
+  pathtoPath: 'PizzaProject1/PizzaProject1'
+  pathtoTest: 'PizzaProject1/PizzaProject1.Testing'
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
